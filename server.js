@@ -7,7 +7,7 @@ const api_key="dc6zaTOxFJmzC"
 const giphy = (keyword) => {
 }
 
-app.get('/search/:keyword', (req, res) => {
+app.get('/search/:keyword?', (req, res) => {
   let tag = req.params.keyword ? req.params.keyword : ""
   let options = {
     uri: giphy_url,
