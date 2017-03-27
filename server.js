@@ -8,11 +8,12 @@ const giphy = (keyword) => {
 }
 
 app.get('/search/:keyword', (req, res) => {
-  let tag = req.params.keyword
+  let tag = req.params.keyword ? req.params.keyword : ""
   let options = {
     uri: giphy_url,
     qs: {
         api_key: api_key,
+        rating: "g",
         tag: tag
     },
     headers: {
