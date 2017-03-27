@@ -24,7 +24,7 @@ app.get('/search/:keyword', (req, res) => {
 rp(options)
     .then(gif => {
       console.log(`gif found for ${tag}: ${gif.data.image_original_url}`)
-      res.send(gif.data.image_original_url)
+      res.redirect(gif.data.image_original_url)
     })
     .catch(err => {
         console.log(err)
